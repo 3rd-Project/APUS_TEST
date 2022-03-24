@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 // TODO: enum 날짜 만들기 - switch
 //  spacing 조절
@@ -37,6 +38,9 @@ struct CustomDatePicker: View {
 //    @State private var isMyModalViewPresented: Bool = true
 
     @State var currentDateValue: DateValue?
+
+    @ObservedObject var uuidManager: uuidManager
+    var db = Firestore.firestore()
 
     var body: some View {
         ScrollView {
@@ -119,11 +123,29 @@ struct CustomDatePicker: View {
                     .foregroundColor(Color.myColor)
                     .padding(.vertical, 8)
                     .frame(height: 50, alignment: .top)
+                
+                Spacer()
+
+                // have to edit this area
+                Circle()
+                    .fil(isCheckInDate(date: currentDate, checkInDates: ) ? .blue : .white)
+                    .frame(width: 8, height: 8)
             }
         }
         .sheet(item: $currentDateValue) { value in
             MyModalView(viewModel: MyModalViewModel(), date: value.date)
         }
+    }
+
+    // Is currentDate in user's dates?
+    func isCheckInDate(date: Date, checkInDates: [String: Date]) -> Bool {
+        let calendar = Calendar.current
+
+        for checkInDate in checkInDates {
+            if calendar.isDate(date, inSameDayAs: checkInDate)
+                return 1
+        }
+        return 0
     }
 
     func extraDate() -> [String] {
