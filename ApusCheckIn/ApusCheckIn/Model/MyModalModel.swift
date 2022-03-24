@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 //구조체로 내가 쓸 데이터 덩어리를 정의 -> ex) Member
 //그 안에는 멤버에 대한 정보가 담겨있다 -> ex) name, attendedDates, id, etc
@@ -13,9 +14,15 @@ import Foundation
 
 struct Member: Identifiable, Codable {
     
-    var id: String
+    @DocumentID var id: String?
     var intraID: String
-    var dates: [Date]
+    var dates: [String: Date]
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case intraID
+        case dates = "Dates"
+    }
     
     func didMemberCheckInOnTheDate(theDate: Date) -> Bool {
         
@@ -24,7 +31,7 @@ struct Member: Identifiable, Codable {
         
         //for in 문으로 attendedDates를 순회하며 오늘이 있는지 확인한다
         for date in self.dates {
-            if formatter.string(from: date) == formatter.string(from: theDate) {
+            if formatter.string(from: date.value) == formatter.string(from: theDate) {
                 return true
             }
         }
@@ -49,8 +56,8 @@ struct Member: Identifiable, Codable {
         formatter.dateFormat = "yy-MM-dd"
         
         for date in self.dates {
-            if formatter.string(from: date) == formatter.string(from: theDate) {
-                return date
+            if formatter.string(from: date.value) == formatter.string(from: theDate) {
+                return date.value
             }
         }
         return nil
