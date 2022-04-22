@@ -47,13 +47,12 @@ struct FrontView: View {
 
 struct EntranceButton: View {
     @ObservedObject var uuidManager: UUIDManager
-    @State var today = Date()
     var isInLocation: Bool
     let db: Firestore
     var time: String = ""
     var body: some View {
         NavigationLink (
-            destination: CustomDatePicker(currentDate: $today),
+            destination: CustomDatePicker(),
             label: {
                 if isInLocation == true {
                     ZStack {
