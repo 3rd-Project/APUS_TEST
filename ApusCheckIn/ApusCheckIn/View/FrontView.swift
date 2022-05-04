@@ -12,7 +12,7 @@ struct FrontView: View {
     @ObservedObject var locationManager: LocationManager
     @ObservedObject var uuidManager: UUIDManager
     let db: Firestore
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -52,7 +52,11 @@ struct EntranceButton: View {
     var time: String = ""
     var body: some View {
         NavigationLink (
-            destination: CustomDatePicker(),
+            destination: CustomDatePicker().navigationBarItems(
+                trailing: NavigationLink(destination: MenuView()) {
+                    Image(systemName: "line.3.horizontal")
+                }
+            ),
             label: {
                 if isInLocation == true {
                     ZStack {
@@ -66,21 +70,21 @@ struct EntranceButton: View {
                     }
                 }
             })
-            .simultaneousGesture(TapGesture().onEnded{
-                if isInLocation == true {
-                    db.addTodayToDates(collection: "testCollection", document: uuidManager.UUID)
-                }
-                
-            })
-            .frame(width: self.buttonWidth(),
-                   height: self.buttonHeight())
-//            .disabled(!isInLocation)
+        .simultaneousGesture(TapGesture().onEnded{
+            if isInLocation == true {
+                db.addTodayToDates(collection: "testCollection", document: uuidManager.UUID)
+            }
+            
+        })
+        .frame(width: self.buttonWidth(),
+               height: self.buttonHeight())
+        //            .disabled(!isInLocation)
     }
-
+    
     private func buttonWidth() -> CGFloat {
         return (UIScreen.main.bounds.width - 5 * 12) / 1.2
     }
-
+    
     private func buttonHeight() -> CGFloat {
         return (UIScreen.main.bounds.width - 5 * 12) / 1.2
     }

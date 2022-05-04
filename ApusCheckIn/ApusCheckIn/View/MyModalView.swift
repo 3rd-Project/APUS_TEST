@@ -11,7 +11,7 @@ struct MyModalView: View {
     
     //뷰모델의 클래스를 @ObservedObject 변수명 viewModel로 선언한다.
     @ObservedObject var viewModel: MyModalViewModel
-    let date: Date
+    @Binding var date: Date
     
     var body: some View {
         NavigationView {
@@ -49,10 +49,7 @@ struct MyModalView: View {
                     } header: {
                         Text("APUS On")
                             .foregroundColor(.blue)
-                        
                     }
-                    
-                    
                     Section {
                         ForEach(viewModel.members) { member in
                             if member.didMemberCheckInOnTheDate(theDate: self.date) == false {
@@ -95,9 +92,9 @@ struct MyModalView: View {
 //}
 
 
-
-struct MyModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyModalView(viewModel: MyModalViewModel(), date: Date())
-    }
-}
+//
+//struct MyModalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyModalView(viewModel: MyModalViewModel(), date: Date())
+//    }
+//}
