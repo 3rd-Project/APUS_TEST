@@ -21,6 +21,7 @@
 		82DC443A27BE0757007D8684 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DC443927BE0757007D8684 /* Preview Assets.xcassets */; };
 		82DC444127BE0905007D8684 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC444027BE0905007D8684 /* FrontView.swift */; };
 		95822C2E28126C75005355D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95822C2D28126C74005355D2 /* GoogleService-Info.plist */; };
+		959CC671281A537B00CCCE52 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CC670281A537B00CCCE52 /* MenuView.swift */; };
 		9BFA6F3D27C39DB100681570 /* UUIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA6F3C27C39DB100681570 /* UUIDManager.swift */; };
 		CC1A8B5B27C4B4D90006EA0A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC1A8B5A27C4B4D90006EA0A /* FirebaseAnalytics */; };
 		CC1A8B5D27C4B4D90006EA0A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CC1A8B5C27C4B4D90006EA0A /* FirebaseFirestore */; };
@@ -47,6 +48,7 @@
 		82DC443927BE0757007D8684 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82DC444027BE0905007D8684 /* FrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
 		95822C2D28126C74005355D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		959CC670281A537B00CCCE52 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9BFA6F3C27C39DB100681570 /* UUIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDManager.swift; sourceTree = "<group>"; };
 		CC709CCE27EC523900C54E10 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				82DC444027BE0905007D8684 /* FrontView.swift */,
 				8215A7D627D07A2600058278 /* CustomDatePicker.swift */,
 				8215A7E327D0800E00058278 /* MyModalView.swift */,
+				959CC670281A537B00CCCE52 /* MenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				8296B05827BE5DEF007CF4AC /* ProcessLocation.swift in Sources */,
 				82DC443327BE0756007D8684 /* ApusCheckInApp.swift in Sources */,
 				822C041727C7472B00ADD3B6 /* InputPopUp.swift in Sources */,
+				959CC671281A537B00CCCE52 /* MenuView.swift in Sources */,
 				CC709CCF27EC523900C54E10 /* FirebaseService.swift in Sources */,
 				8215A7D527D079EF00058278 /* DateValue.swift in Sources */,
 				825879ED27BE12F6008912B2 /* LocationManager.swift in Sources */,
@@ -364,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApusCheckIn/Preview Content\"";
-				DEVELOPMENT_TEAM = 37XQGF3J2T;
+				DEVELOPMENT_TEAM = L2APQ8HQZD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApusCheckIn/Info.plist;
@@ -381,7 +385,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ApusPacificus.ApusCheckInTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ApusPacificus.ApusCheckInTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -397,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApusCheckIn/Preview Content\"";
-				DEVELOPMENT_TEAM = 37XQGF3J2T;
+				DEVELOPMENT_TEAM = L2APQ8HQZD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApusCheckIn/Info.plist;
@@ -414,7 +418,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ApusPacificus.ApusCheckInTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ApusPacificus.ApusCheckInTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
